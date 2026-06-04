@@ -1,0 +1,22 @@
+
+
+import pandas as pd
+
+try:
+    df = pd.read_csv('activities.csv')
+    df['Total_Hours'] = df['Study'] + df['Sports'] + df['Sleep']
+
+    print("--- Student Activity Analysis ---")
+    print(df)
+    
+    print("\n--- Summary Statistics ---")
+    print(f"Average Study Hours: {df['Study'].mean():.2f}")
+    print(f"Maximum Sports Hours: {df['Sports'].max()}")
+    print(f"Minimum Sleep Hours: {df['Sleep'].min()}")
+
+    high_study = df[df['Study'] > 6]
+    print("\n--- High Study Students (>6 hrs) ---")
+    print(high_study[['Student', 'Study']])
+
+except FileNotFoundError:
+    print("Error: 'activities.csv' not found. Please ensure the file exists.")
