@@ -1,0 +1,21 @@
+
+import pandas as pd
+import io
+
+def manage_attendance_system():
+    csv_data = """Name,Total_Classes,Attended
+Alice,50,45
+Bob,50,38
+Charlie,50,48
+David,50,25"""
+    
+  
+  
+    df = pd.read_csv(io.StringIO(csv_data))
+  
+    df['Attended'] += 1
+    df['Total_Classes'] += 1
+    df['Attendance_Percentage'] = (df['Attended'] / df['Total_Classes']) * 100
+    print("--- Updated Student Attendance Report ---")
+    print(df[['Name', 'Attended', 'Total_Classes', 'Attendance_Percentage']])
+manage_attendance_system()
