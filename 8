@@ -1,0 +1,28 @@
+
+import pandas as pd
+accounts = pd.DataFrame({'Balance': [5000, 3000, 1500]}, index=['Acc_1', 'Acc_2', 'Acc_3'])
+transactions = pd.Series([-500, 2000, -200], index=['Acc_1', 'Acc_2', 'Acc_3'])
+accounts['Updated_Balance'] = accounts['Balance'] + transactions
+
+print("--- Bank Account Updates ---")
+print(accounts)
+OUTPUT:
+
+
+
+
+
+# 8b. Student Ranking System
+
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'Marks': [85, 92, 78, 92]
+}
+
+df = pd.DataFrame(data)
+df = df.sort_values(by='Marks', ascending=False)
+df['Rank'] = df['Marks'].rank(ascending=False, method='min')
+
+print("\n--- Student Rankings ---")
+print(df)
+OUTPUT:
