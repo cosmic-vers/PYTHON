@@ -11,8 +11,6 @@ class ComplexNum:
 
     def __str__(self):
         return f"{self.r} + {self.i}j"
-
-# Asking the user for input
 print("--- Enter first complex number ---")
 r1 = float(input("Enter real part: "))
 i1 = float(input("Enter imaginary part: "))
@@ -21,11 +19,8 @@ print("\n--- Enter second complex number ---")
 r2 = float(input("Enter real part: "))
 i2 = float(input("Enter imaginary part: "))
 
-# Creating objects with user data
 c1 = ComplexNum(r1, i1)
 c2 = ComplexNum(r2, i2)
-
-# Displaying the result
 print(f"\nResult of Addition: {c1 + c2}")
 
 OUTPUT:
@@ -61,31 +56,23 @@ class Order(Product, Discount):
 
 def run_program():
     try:
-        # 1. Validate Product Name
         prod_name = input("Enter product name: ").strip()
         if not prod_name:
             raise ValueError("Product name cannot be empty.")
-
-        # 2. Validate Discount Rate (Type and Range)
         rate_input = input("Enter discount percentage (0-100): ")
         disc_rate = float(rate_input) # May raise ValueError if not a number
         
         if disc_rate < 0 or disc_rate > 100:
             raise ValueError("Discount must be between 0 and 100.")
-
-        # If all checks pass, create the object
         order = Order(prod_name, disc_rate)
         print("\n--- Order Summary ---")
         order.show()
 
     except ValueError as e:
-        # Handles non-numeric inputs or custom range errors
         print(f"Input Error: {e}")
     except KeyboardInterrupt:
-        # Handles cases where user stops the program (e.g., Ctrl+C)
         print("\nProgram stopped by user.")
     except Exception as e:
-        # Catch-all for any other unexpected failures
         print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
