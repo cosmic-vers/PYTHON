@@ -18,14 +18,12 @@ OUTPUT:
 
 # 2b. Library Book List (Add, Search, Display)
 def add_book(library):
-    """Adds a new book title and author to the dictionary."""
     title = input("Enter book title: ").strip()
     author = input("Enter author name: ").strip()
     library[title] = author
     print(f"Book '{title}' added successfully!")
 
 def search_book(library):
-    """Searches for a book by its title."""
     title = input("Enter book title to search: ").strip()
     if title in library:
         print(f"Found: '{title}' by {library[title]}")
@@ -33,7 +31,6 @@ def search_book(library):
         print("Book not found in the library.")
 
 def display_books(library):
-    """Displays all books currently in the dictionary."""
     if not library:
         print("The library is currently empty.")
     else:
@@ -42,7 +39,6 @@ def display_books(library):
             print(f"Title: {title} | Author: {author}")
 
 def main():
-    """Main function to handle user menu and choices."""
     library_data = {}
     
     while True:
@@ -65,7 +61,6 @@ def main():
         else:
             print("Invalid choice! Please select between 1 and 4.")
 
-# Execute the program
 if __name__ == "__main__":
     main()
 OUTPUT:
