@@ -67,7 +67,6 @@ def run_program():
         order = Order(prod_name, disc_rate)
         print("\n--- Order Summary ---")
         order.show()
-
     except ValueError as e:
         print(f"Input Error: {e}")
     except KeyboardInterrupt:
